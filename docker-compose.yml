@@ -30,3 +30,12 @@ services:
       options:
         max-size: "10m"
         max-file: "10"
+  auth-mongodb:
+    image: sqshq/piggymetrics-mongodb
+    restart: always
+    environment:
+      MONGODB_PASSWORD: $MONGODB_PASSWORD
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "10"

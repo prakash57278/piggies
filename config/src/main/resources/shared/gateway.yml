@@ -20,10 +20,10 @@ spring:
         response-timeout: 20000
         
       routes:
-      - id: auth-service
-        uri: http://auth-service:5000
+      - id: auth-services
+        uri: lb://auth-services
         predicates:
-        - Path=/uaa/** 
+        - Path=/auth/** 
         filters:
         - StripPrefix=0
 
@@ -51,4 +51,4 @@ spring:
 
 
 server:
-  port: 4000
+  port: 1000
