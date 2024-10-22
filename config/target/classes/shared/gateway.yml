@@ -33,7 +33,6 @@ spring:
         - Path=/accounts/**
         filters:
         - AuthenticationFilter
-        - StripPrefix=0
         
         
       - id: statistics-service
