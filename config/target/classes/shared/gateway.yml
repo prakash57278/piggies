@@ -32,6 +32,7 @@ spring:
         predicates:
         - Path=/accounts/**
         filters:
+        - AuthenticationFilter
         - StripPrefix=0
         
         
@@ -40,6 +41,7 @@ spring:
         predicates:
         - Path=/statistics/**
         filters:
+        - AuthenticationFilter
         - StripPrefix=0
 
       - id: notification-service

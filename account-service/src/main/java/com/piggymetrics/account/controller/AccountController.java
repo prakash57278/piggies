@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.security.Principal;
+import org.springframework.http.HttpHeaders;
 
 @RestController
 public class AccountController {
@@ -18,7 +19,8 @@ public class AccountController {
 
 //	@PreAuthorize("#oauth2.hasScope('server') or #name.equals('demo')")
 	@GetMapping("/{name}")
-	public Account getAccountByName(@PathVariable String name) {
+	public Account getAccountByName(@PathVariable String name,@RequestHeader(HttpHeaders.AUTHORIZATION) String authorizationHeader) {
+		System.out.println(authorizationHeader);
 		return accountService.findByName(name);
 	}
 
